@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 import 'package:video_editor/video_editor.dart';
 
-const kDefaultSelectedColor = Color(0xffffcc00);
+const kDefaultSelectedColor = Colors.pink;
 
 /// Returns a desired dimension of [layout] that respect [r] aspect ratio
 Size computeSizeWithRatio(Size layout, double r) {

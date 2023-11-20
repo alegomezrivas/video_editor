@@ -4,12 +4,12 @@ import 'package:video_editor/src/utils/helpers.dart';
 class CropGridStyle {
   ///Style for [CropGridViewer]. It's use on VideoEditorController
   const CropGridStyle({
-    this.croppingBackground = Colors.black45,
-    this.background = Colors.black,
+    this.croppingBackground = Colors.white,
+    this.background = Colors.white,
     this.gridLineColor = Colors.white,
     this.gridLineWidth = 1,
     this.gridSize = 3,
-    this.boundariesColor = Colors.white,
+    this.boundariesColor = Colors.pink,
     this.selectedBoundariesColor = kDefaultSelectedColor,
     this.boundariesLength = 20,
     this.boundariesWidth = 5,

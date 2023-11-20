@@ -6,7 +6,7 @@ enum TrimSliderEdgesType { bar, circle }
 class TrimSliderStyle {
   ///Style for [TrimSlider]. It's use on VideoEditorController
   const TrimSliderStyle({
-    this.background = Colors.black54,
+    this.background = Colors.black38,
     this.positionLineColor = Colors.white,
     this.positionLineWidth = 4,
     this.lineColor = Colors.white60,
@@ -18,7 +18,7 @@ class TrimSliderStyle {
     this.edgesType = TrimSliderEdgesType.bar,
     double? edgesSize,
     // icons
-    this.iconColor = Colors.black,
+    this.iconColor = Colors.white,
     this.iconSize = 16,
     this.leftIcon = Icons.arrow_back_ios_rounded,
     this.rightIcon = Icons.arrow_forward_ios_rounded,
