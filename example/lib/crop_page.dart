@@ -14,7 +14,6 @@ class CropPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
-        elevation: 1,
         actions: [
           Expanded(
             child: IconButton(

@@ -284,7 +284,6 @@ class _VideoEditorState extends State<VideoEditor> {
         child: TrimSlider(
           controller: _controller,
           height: height,
-          horizontalMargin: height / 4,
           child: TrimTimeline(
             controller: _controller,
             padding: const EdgeInsets.only(top: 10),

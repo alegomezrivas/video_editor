@@ -7,9 +7,9 @@ class TrimSliderStyle {
   ///Style for [TrimSlider]. It's use on VideoEditorController
   const TrimSliderStyle({
     this.background = Colors.black38,
-    this.positionLineColor = Colors.white,
-    this.positionLineWidth = 4,
-    this.lineColor = Colors.pink,
+    this.positionLineColor = Colors.pinkAccent,
+    this.positionLineWidth = 2,
+    this.lineColor = Colors.pinkAccent,
     this.onTrimmingColor = kDefaultSelectedColor,
     this.onTrimmedColor = kDefaultSelectedColor,
     this.lineWidth = 2,
@@ -20,8 +20,8 @@ class TrimSliderStyle {
     // icons
     this.iconColor = Colors.white,
     this.iconSize = 16,
-    this.leftIcon = Icons.arrow_back_ios_rounded,
-    this.rightIcon = Icons.arrow_forward_ios_rounded,
+    this.leftIcon, // = Icons.arrow_back_ios_rounded,
+    this.rightIcon, // = Icons.arrow_forward_ios_rounded,
   }) : edgesSize = edgesSize ?? (edgesType == TrimSliderEdgesType.bar ? 10 : 8);
 
   /// The [background] param specifies the color of the paint area outside the trimmed area
