@@ -9,7 +9,7 @@ class TrimSliderStyle {
     this.background = Colors.black38,
     this.positionLineColor = Colors.pinkAccent,
     this.positionLineWidth = 2,
-    this.lineColor = Colors.pinkAccent,
+    this.lineColor = Colors.pink,
     this.onTrimmingColor = kDefaultSelectedColor,
     this.onTrimmedColor = kDefaultSelectedColor,
     this.lineWidth = 2,
