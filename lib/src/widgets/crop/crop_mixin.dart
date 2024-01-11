@@ -2,6 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:video_editor/src/controller.dart';
+import 'package:video_editor/src/models/crop_style.dart';
 import 'package:video_editor/src/utils/helpers.dart';
 import 'package:video_editor/src/models/transform_data.dart';
 import 'package:video_editor/src/widgets/crop/crop_grid.dart';
@@ -53,7 +54,8 @@ mixin CropPreviewMixin<T extends StatefulWidget> on State<T> {
   Widget buildVideoView(
     VideoEditorController controller,
     TransformData transform,
-    CropBoundaries boundary, {
+    CropBoundaries boundary,
+    CropGridStyle cropGridStyle, {
     bool showGrid = false,
   }) {
     return SizedBox.fromSize(
@@ -66,6 +68,7 @@ mixin CropPreviewMixin<T extends StatefulWidget> on State<T> {
           child: buildPaint(
             controller,
             boundary: boundary,
+            cropStyle: cropGridStyle,
             showGrid: showGrid,
             showCenterRects: controller.preferredCropAspectRatio == null,
           ),
@@ -99,6 +102,7 @@ mixin CropPreviewMixin<T extends StatefulWidget> on State<T> {
   Widget buildPaint(
     VideoEditorController controller, {
     CropBoundaries? boundary,
+    CropGridStyle cropStyle = const CropGridStyle(),
     bool showGrid = false,
     bool showCenterRects = false,
   }) {
@@ -111,7 +115,7 @@ mixin CropPreviewMixin<T extends StatefulWidget> on State<T> {
           size: Size.infinite,
           painter: CropGridPainter(
             value,
-            style: controller.cropStyle,
+            style: cropStyle,
             boundary: boundary,
             showGrid: showGrid,
             showCenterRects: showCenterRects,

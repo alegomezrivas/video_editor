@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:video_editor/src/controller.dart';
 import 'package:video_editor/src/widgets/trim/thumbnail_slider.dart';
 import 'package:video_editor/src/widgets/trim/trim_slider_painter.dart';
+import 'package:video_editor/video_editor.dart';
 
 enum _TrimBoundaries { left, right, inside, progress }
 
@@ -13,7 +13,7 @@ const _touchMargin = 24.0;
 
 class TrimSlider extends StatefulWidget {
   /// Slider that trim video length.
-  const TrimSlider({
+  TrimSlider({
     super.key,
     required this.controller,
     this.height = 60,
@@ -22,7 +22,8 @@ class TrimSlider extends StatefulWidget {
     this.hasHaptic = true,
     this.maxViewportRatio = 2.5,
     this.scrollController,
-  });
+    TrimSliderStyle? trimStyle,
+  }) : trimStyle = trimStyle ?? TrimSliderStyle();
 
   /// The [controller] param is mandatory so every change in the controller settings will propagate in the trim slider view
   final VideoEditorController controller;
@@ -57,6 +58,8 @@ class TrimSlider extends StatefulWidget {
 
   //// The [scrollController] param specifies the scroll controller to use for the trim slider view
   final ScrollController? scrollController;
+
+  final TrimSliderStyle trimStyle;
 
   @override
   State<TrimSlider> createState() => _TrimSliderState();
@@ -628,7 +631,7 @@ class _TrimSliderState extends State<TrimSlider>
                       painter: TrimSliderPainter(
                         _rect,
                         _getVideoPosition(),
-                        widget.controller.trimStyle,
+                        widget.trimStyle,
                         isTrimming: widget.controller.isTrimming,
                         isTrimmed: widget.controller.isTrimmed,
                       ),

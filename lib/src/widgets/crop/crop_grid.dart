@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:video_editor/src/controller.dart';
+import 'package:video_editor/src/models/crop_style.dart';
 import 'package:video_editor/src/utils/helpers.dart';
 import 'package:video_editor/src/models/transform_data.dart';
 import 'package:video_editor/src/widgets/crop/crop_mixin.dart';
@@ -26,12 +27,14 @@ class CropGridViewer extends StatefulWidget {
     super.key,
     required this.controller,
   })  : showGrid = false,
+        cropStyle = const CropGridStyle(),
         rotateCropArea = true,
         margin = EdgeInsets.zero;
 
   const CropGridViewer.edit({
     super.key,
     required this.controller,
+    this.cropStyle = const CropGridStyle(),
     this.margin = const EdgeInsets.symmetric(horizontal: 20),
     this.rotateCropArea = true,
   }) : showGrid = true;
@@ -53,6 +56,8 @@ class CropGridViewer extends StatefulWidget {
   ///
   /// Defaults to `true` (like iOS Photos app crop)
   final bool rotateCropArea;
+
+  final CropGridStyle cropStyle;
 
   @override
   State<CropGridViewer> createState() => _CropGridViewerState();
@@ -369,6 +374,7 @@ class _CropGridViewerState extends State<CropGridViewer> with CropPreviewMixin {
         _controller,
         transform,
         _boundary,
+        widget.cropStyle,
         showGrid: widget.showGrid,
       ),
     );

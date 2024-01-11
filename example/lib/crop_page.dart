@@ -56,6 +56,7 @@ class CropPage extends StatelessWidget {
               controller: controller,
               rotateCropArea: false,
               margin: const EdgeInsets.symmetric(horizontal: 20),
+              cropStyle: const CropGridStyle(boundariesColor: Colors.orange),
             ),
           ),
           const SizedBox(height: 15),
